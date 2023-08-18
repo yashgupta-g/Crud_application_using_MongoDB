@@ -1,15 +1,29 @@
 import React from 'react'
-import {AppBar, Toolbar } from '@mui/material';
+import {AppBar, Toolbar , styled } from '@mui/material';
 import "./Header.css"
+import { NavLink } from 'react-router-dom';
+import App from '../App';
 export default function Header() {
+
+const Header = styled(AppBar)`
+background: #111111; 
+
+
+`
+const Tabs = styled(NavLink)`
+margin: 20px ;
+color : inherit;
+text-decoration: none ;
+`
+
+
   return (
-   <AppBar position='static'>
+   <Header position='static'>
     <Toolbar>
-<h2 className='links'>CRUD APP </h2>
-<h3 className='links'> All User</h3>
-<h3 className='links'>Add User</h3>
+    <Tabs to= "/ "> CRUD APP </Tabs>
+    <Tabs to="/all"> All User  </Tabs>
+    <Tabs to ="/add"> Add User  </Tabs>
 
     </Toolbar>
-   </AppBar>
-  )
-}
+    </Header>
+  )}
